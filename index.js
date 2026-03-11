@@ -1,4 +1,5 @@
 //npm install --save readline-sync
+//npm init -y
 
 const rl = require("readline-sync")
 
@@ -21,11 +22,15 @@ if(op === 1){
 let altura = Number(rl.question('Qual o valor da altura:'))
 let lado = Number(rl.question('Qual o valor do lado:'))
 let prisma = new Prisma(altura,lado)
-let areaBase = prisma.calcularAreaBase()
-let volume = prisma.calcularVolume()
+let areaBase = prisma.areaBase()
+let areaLateral = prisma.areaLateral()
+let areaTotalPrisma = prisma.areaTotalPrisma()
+let volume = prisma.volumePrisma()
 
-console.log(`A área da base do prisma de raio ${altura} e lado de ${lado} é: ${areaBase} cm²`)
-console.log(`O volume do prisma de raio ${altura} e lado de ${lado} é: ${volume} cm³`)
+console.log(`A área da base do prisma de raio ${altura} e lado de ${lado} é: ${areaBase.toFixed(3)} cm²`)
+console.log(`A área Lateral do prisma de raio ${altura} e lado de ${lado} é: ${areaLateral.toFixed(3)} cm²`)
+console.log(`A área Total do prisma de raio ${altura} e lado de ${lado} é: ${areaTotalPrisma.toFixed(3)} cm²`)
+console.log(`O volume do prisma de raio ${altura} e lado de ${lado} é: ${volume.toFixed(3)} cm³`)
 
 }else if(op === 2){
 let altura = Number(rl.question('Qual o valor da altura:'))

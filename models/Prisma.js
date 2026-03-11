@@ -4,12 +4,20 @@ class Prisma{
     this.lado = lado
 }
 
-calcularAreaBase(){
-    return this.lado * this.lado * Math.sqrt(3) / 4
+areaBase(){
+    return (this.lado * this.lado * Math.sqrt(3)) / 4
 }
 
-calcularVolume(){
-    return this.calcularAreaBase * this.altura
+areaLateral(){
+    return 3 * this.lado * this.altura
+}
+
+areaTotalPrisma(){
+    return 2 * this.areaBase() * this.areaLateral()
+}
+
+volumePrisma(){
+    return this.areaBase() * this.altura
 }
 }
 
