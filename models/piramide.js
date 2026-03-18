@@ -1,15 +1,28 @@
 class Piramide{
-    constructor (altura,lado){
-    this.altura = altura
-    this.lado = lado
+    constructor (aresta, apotema, altura){
+this.aresta = aresta
+this.apotema = apotema
+this.altura = altura
 }
 
-calcularAreaBase(){
-    return this.lado * this.lado * Math.sqrt(3) / 4
+areaBase(){
+return ((this.aresta * this.aresta) * Math.sqrt(3)) / 4
 }
 
-calcularVolume(){
-    return (1/3) * this.calcularAreaBase * this.altura
+areaLateral(){
+return (this.perimetro() * this.apotema) / 2
+}
+
+perimetro(){
+return 3 * this.aresta
+}
+
+areaTotalPiramide(){
+return this.areaBase() + this.areaLateral()
+}
+
+volumePiramide(){
+return (1/3) * this.areaBase() * this.altura
 }
 }
 
